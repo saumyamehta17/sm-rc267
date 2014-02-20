@@ -1,0 +1,78 @@
+@mixin common-style{
+  font-size: 13px;
+  line-height: 18px;
+}
+
+@mixin error-style($margin,$background) {
+  margin-bottom: $margin;
+  background-color: $background;
+}
+$main-color: #fff;
+
+body {
+  background-color: $main-color;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  @include common-style;
+}
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  @include common-style;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a {
+  color: #000;
+  &:visited {
+    color: #666;
+  }
+  &:hover {
+    color: $main-color;
+    background-color: #000;
+  }
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  @include error-style(20px,#f0f0f0);
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    @include error-style(0px,#c00);
+    color: $main-color;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Card num:</strong>
+  <%= @credit_card.card_num %>
+</p>
+
+<p>
+  <strong>Expiry date:</strong>
+  <%= @credit_card.expiry_date %>
+</p>
+
+<%= link_to 'Edit', edit_credit_card_path(@credit_card) %> |
+<%= link_to 'Back', credit_cards_path %>
